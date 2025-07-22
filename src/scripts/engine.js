@@ -37,24 +37,48 @@ const cardData = [
         name: 'Blue Eyes White Dragon',
         type: 'Paper',
         img: `${pathImages}dragon.png`,
-        WinOf: [1],
-        LoseOf: [2],
+        WinOf: [1,4],
+        LoseOf: [2,5],
     },
     {
         id: 1,
         name: 'Dark Magician',
         type: 'Rock',
         img: `${pathImages}magician.png`,
-        WinOf: [2],
-        LoseOf: [0],
+        WinOf: [2,5],
+        LoseOf: [0,3],
     },
     {
         id: 2,
         name: 'Exodia the Forbidden One',
         type: 'Scissors',
         img: `${pathImages}exodia.png`,
-        WinOf: [0],
-        LoseOf: [1],
+        WinOf: [0,3],
+        LoseOf: [1,4],
+    },
+    {
+        id: 3,
+        name: 'B. Skull Dragon',
+        type: 'Paper',
+        img: `${pathImages}skullDragon.png`,
+        WinOf: [1,4],
+        LoseOf: [2,5],
+    },
+    {
+        id: 4,
+        name: 'Black Luster Soldier',
+        type: 'Rock',
+        img: `${pathImages}blackLusterSoldier.png`,
+        WinOf: [2,5],
+        LoseOf: [0,3],
+    },
+    {
+        id: 5,
+        name: 'Flame Swordman',
+        type: 'Scissors',
+        img: `${pathImages}flameSwordman.png`,
+        WinOf: [0,3],
+        LoseOf: [1,4],
     }
 ]
 
@@ -105,7 +129,7 @@ async function setCardsField(cardId) {
 
 async function drawCardsInField(cardId, computerCardId) {
     state.fieldCards.player.src = cardData[cardId].img;
-    state.fieldCards.computer.src = cardData[computerCardId].img; 
+    state.fieldCards.computer.src = cardData[computerCardId].img;
 }
 
 async function showHiddenCardFieldsImages(value) {
@@ -217,7 +241,7 @@ function init() {
     drawCards(5, playerSides.computer);
     const bgm = document.getElementById('bgm');
     bgm.play();
-    bgm.volume = 0.2;
+    bgm.volume = 0.4;
 }
 
 init();
